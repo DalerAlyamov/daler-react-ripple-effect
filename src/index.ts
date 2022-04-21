@@ -1,0 +1,1 @@
+export { RippleEffect } from './RippleEffect'

@@ -1,0 +1,23 @@
+.Ripple {
+	position: absolute;
+	animation: rippleSize 250ms linear forwards;
+	transform: scale(0);
+	background: rgba(#fff, 0.1);
+	border-radius: 500px;
+	transition: 250ms linear;
+	&--disabled {
+		opacity: 0;
+	}
+}
+
+@keyframes rippleSize {
+	to {
+		transform: scale(2.5);
+	}
+}
+
+@keyframes rippleOpacity {
+	to {
+		opacity: 0;
+	}
+}

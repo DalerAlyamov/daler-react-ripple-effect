@@ -1,0 +1,25 @@
+{
+  "name": "daler-react-ripple-effect",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.ts",
+  "scripts": {
+    "clean": "rm -rf dist",
+    "build": "yarn run clean && tsc && yarn run copy",
+    "copy": "cp package.json README.md src/index.scss ./dist"
+  },
+  "keywords": [],
+  "author": "Daler Alyamov",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/react": "^18.0.5",
+    "classnames": "^2.3.1",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "sass": "^1.50.1",
+    "typescript": "^4.6.3"
+  },
+  "dependencies": {
+    "typescript-plugin-css-modules": "^3.4.0"
+  }
+}
