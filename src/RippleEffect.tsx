@@ -58,6 +58,10 @@ export const RippleEffect: React.FC<IProps> = (props): JSX.Element => {
       onMouseDown={handleMouseDown}
       onMouseUp={handleMouseUp}
       {...props}
+      style={{
+        position: "relative",
+        overflow: "hidden"
+      }}
     >
       {props.children}
       {ripples.map((ripple) => (
