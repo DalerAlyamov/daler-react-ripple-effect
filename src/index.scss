@@ -1,8 +1,7 @@
 .Ripple {
 	position: absolute;
-	animation: rippleSize 250ms linear forwards;
+	animation: rippleSize linear forwards;
 	transform: scale(0);
-	background: rgba(#fff, 0.1);
 	border-radius: 500px;
 	transition: 250ms linear;
 	&--disabled {
