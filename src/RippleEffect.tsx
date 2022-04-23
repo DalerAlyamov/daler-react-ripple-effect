@@ -52,7 +52,7 @@ export const RippleEffect: React.FC<IProps> = (props): JSX.Element => {
     setRipples((prev) => prev.map((ripple) => ({ ...ripple, active: false })));
     setTimeout(() => {
       setRipples((prev) => prev.slice(1));
-    }, 40000);
+    }, 300);
   }, []);
 
   return (
