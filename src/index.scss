@@ -1,3 +1,8 @@
+.RippleEffectChildren {
+	position: relative;
+	z-index: 100;
+}
+
 .Ripple {
 	position: absolute;
 	animation: rippleSize 200ms linear forwards;
@@ -5,6 +10,7 @@
 	border-radius: 500px;
 	transition: 250ms linear;
 	pointer-events: none;
+	z-index: 80;
 	&--disabled {
 		opacity: 0;
 	}

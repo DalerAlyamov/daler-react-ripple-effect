@@ -67,7 +67,9 @@ export const RippleEffect: React.FC<IProps> = (props): JSX.Element => {
         overflow: "hidden"
       }}
     >
-      {props.children}
+      <div className="RippleEffectChildren">
+        {props.children}
+      </div>
       {ripples.map((ripple) => (
         <Ripple
           key={ripple.id}
