@@ -5,14 +5,14 @@
 
 .Ripple {
 	position: absolute;
-	animation: rippleSize 200ms linear forwards;
+	animation: rippleSize 200ms ease-in forwards;
 	transform: scale(0);
 	border-radius: 500px;
-	transition: 250ms linear;
+	transition: 250ms ease-in;
 	pointer-events: none;
 	z-index: 80;
 	&--disabled {
-		opacity: 0;
+		opacity: .25;
 	}
 }
 
