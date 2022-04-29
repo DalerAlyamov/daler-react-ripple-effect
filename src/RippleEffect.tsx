@@ -31,8 +31,10 @@ export const RippleEffect: React.FC<IProps> = (props): JSX.Element => {
       );
       const radius = diameter / 2;
 
-      const left = `${(e.clientX + window.scrollX) - (button.current.offsetLeft + radius)}px`;
-      const top = `${(e.clientY + window.scrollY) - (button.current.offsetTop + radius)}px`;
+      const elem = button.current.getBoundingClientRect();
+
+      const left = `${(e.clientX + window.scrollX) - (elem.left + radius)}px`;
+      const top = `${(e.clientY + window.scrollY) - (elem.top + radius)}px`;
 
       setRipples((prev) => [
         ...prev,
