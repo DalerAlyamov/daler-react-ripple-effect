@@ -5,10 +5,10 @@
 
 .Ripple {
 	position: absolute;
-	animation: rippleSize 200ms ease-in forwards;
+	animation: rippleSize 200ms linear forwards;
 	transform: scale(0);
 	border-radius: 500px;
-	transition: 250ms ease-in;
+	transition: 200ms linear;
 	pointer-events: none;
 	z-index: 80;
 	&--disabled {
