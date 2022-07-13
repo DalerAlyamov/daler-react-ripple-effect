@@ -8,8 +8,8 @@ interface IRipple {
   top: string;
 	active: boolean;
   diameter: string;
-  color: string | undefined;
-  animationDuration: number | undefined;
+  color?: string;
+  animationDuration?: number;
 }
 
 const Ripple: React.FC<IRipple> = (props): JSX.Element => {
