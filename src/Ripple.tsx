@@ -1,33 +1,43 @@
-import classNames from 'classnames';
-import React from 'react';
-import './index.scss';
+import React from "react";
+import classNames from "classnames";
+import "./index.scss";
 
 interface IRipple {
-	id: number;
+  id: number;
   left: string;
   top: string;
-	active: boolean;
+  active: boolean;
   diameter: string;
   color?: string;
   animationDuration?: number;
 }
 
-const Ripple: React.FC<IRipple> = (props): JSX.Element => {
+enum Default {
+  backgroundColor = "rgba(255, 255, 255, 0.1)",
+  className = "Ripple",
+  disabledClassName = "Ripple--disabled",
+}
+
+const Ripple: React.FC<IRipple> = ({
+  left,
+  top,
+  diameter,
+  color,
+  active,
+}): JSX.Element => {
   return (
     <span
       style={{
-        left: props.left,
-        top: props.top,
-        width: props.diameter,
-        height: props.diameter,
-        backgroundColor: props.color || 'rgba(255, 255, 255, 0.1)'
+        left,
+        top,
+        width: diameter,
+        height: diameter,
+        backgroundColor: color || Default.backgroundColor,
       }}
-      className={
-        classNames(
-          "Ripple", 
-          !props.active && "Ripple--disabled"
-        )
-      }
+      className={classNames(
+        Default.className,
+        active && Default.disabledClassName
+      )}
     />
   );
 };
