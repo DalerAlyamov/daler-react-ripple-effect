@@ -9,22 +9,20 @@ interface IProps {
 }
 
 interface IRipple {
-	id: number;
+  id: number;
   left: string;
   top: string;
-	active: boolean;
+  active: boolean;
   diameter: string;
 }
 
 export const RippleEffect: React.FC<IProps> = (props): JSX.Element => {
   const button = React.useRef<HTMLDivElement>(null);
-
   const [ripples, setRipples] = React.useState<IRipple[]>([]);
 
   const handleMouseDown = React.useCallback(
     (e: React.MouseEvent<HTMLDivElement>) => {
       if (!button.current) return;
-
       const diameter = Math.max(
         button.current.clientWidth,
         button.current.clientHeight
@@ -33,8 +31,8 @@ export const RippleEffect: React.FC<IProps> = (props): JSX.Element => {
 
       const elem = button.current.getBoundingClientRect();
 
-      const left = `${(e.clientX + window.scrollX) - (elem.left + radius)}px`;
-      const top = `${(e.clientY + window.scrollY) - (elem.top + radius)}px`;
+      const left = `${e.clientX + window.scrollX - (elem.left + radius)}px`;
+      const top = `${e.clientY + window.scrollY - (elem.top + radius)}px`;
 
       setRipples((prev) => [
         ...prev,
@@ -66,20 +64,18 @@ export const RippleEffect: React.FC<IProps> = (props): JSX.Element => {
       {...props}
       style={{
         position: "relative",
-        overflow: "hidden"
+        overflow: "hidden",
       }}
     >
-      <div className="RippleEffectChildren">
-        {props.children}
-      </div>
-      {ripples.map((ripple) => (
+      <div className="RippleEffectChildren">{props.children}</div>
+      {ripples.map(({ id, left, top, diameter, active }) => (
         <Ripple
-          key={ripple.id}
-          id={ripple.id}
-          left={ripple.left}
-          top={ripple.top}
-          diameter={ripple.diameter}
-          active={ripple.active}
+          key={id}
+          id={id}
+          left={left}
+          top={top}
+          diameter={diameter}
+          active={active}
           color={props.color}
           animationDuration={props.animationDuration}
         />
